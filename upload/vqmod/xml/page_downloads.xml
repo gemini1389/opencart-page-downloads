@@ -23,7 +23,7 @@
 	</file>
 	<file name="admin/language/english/common/header.php">
 		<operation error="skip">
-			<search position="after"><![CDATA[$this->data['text_zone'] = $this->language->get('text_zone');]]></search>
+			<search position="after"><![CDATA[$_['text_zone']                        = 'Zones';]]></search>
 			<add><![CDATA[
 $_['text_page_with_down']			   = 'Page with downloads';
 $_['text_cat_down']					   = 'Сategories of downloads';
@@ -69,8 +69,8 @@ $_['text_cat_down'] = 'Категорії завантажень';
 	</file>
 	<file name="catalog/language/english/information/sitemap.php">
 		<operation error="skip">
-			<search position="after"><![CDATA[$this->data['contact'] = $this->url->link('information/contact');]]></search>
-			<add><![CDATA[$this->data['files'] = $this->url->link('module/downloads');]]></add>
+			<search position="after"><![CDATA[$_['text_contact']      = 'Contacts';]]></search>
+			<add><![CDATA[$_['text_files']        = 'Downloads';]]></add>
 		</operation>
 	</file>
 	<file name="catalog/language/russian/information/sitemap.php">
@@ -79,13 +79,13 @@ $_['text_cat_down'] = 'Категорії завантажень';
 			<add><![CDATA[$_['text_files']        = 'Загрузки';]]></add>
 		</operation>
 	</file>
-	<file name="catalog/view/theme/default/template/information/sitemap.tpl">
+	<file name="catalog/language/ukrainian/information/sitemap.php">
 		<operation error="skip">
 			<search position="after"><![CDATA[$_['text_contact'] = 'Контакти'; #39772]]></search>
 			<add><![CDATA[$_['text_files'] = 'Завантаження';]]></add>
 		</operation>
 	</file>
-	<file name="catalog/language/ukrainian/information/sitemap.php">
+	<file name="catalog/view/theme/*/template/information/sitemap.tpl">
 		<operation error="log">
 			<search position="before"><![CDATA[<li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>]]></search>
 			<add><![CDATA[<li><a href="<?php echo $files; ?>"><?php echo $text_files; ?></a></li>]]></add>

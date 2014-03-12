@@ -13,8 +13,8 @@ $_['text_browse']           = 'Обзор';
 $_['text_clear']            = 'Очистить';
 
 // Column
-$_['column_name']			= 'Названия';
-$_['column_sort_order']		= 'Порядо сортировки';
+$_['column_name']			= 'Название';
+$_['column_sort_order']		= 'Порядок сортировки';
 $_['column_status']			= 'Статус';
 $_['column_action']			= 'Действие';
 
