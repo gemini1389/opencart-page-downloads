@@ -97,8 +97,8 @@
 <div id="content">
     <?php if ($downloads_cats) { ?>
         <?php foreach ($downloads_cats as $category) { ?>
-            <div class="category">
-                <?php if ($category && !empty($category['cat_files'])) { ?>
+            <?php if ($category && !empty($category['cat_files'])) { ?>
+			    <div class="category">
                     <h1><?php echo $category['cat_name']; ?></h1>
                     <div class="category-description"><h3><?php echo $category['cat_description']; ?></h3></div>
                     <div class="files-list">
@@ -128,8 +128,8 @@
                             </div>
                         <?php } ?>
                     </div>
-                <?php } ?>
-            </div>
+                </div>
+            <?php } ?>
         <?php } ?>
     <?php } ?>
 </div>
