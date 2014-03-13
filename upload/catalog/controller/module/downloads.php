@@ -75,7 +75,7 @@ class ControllerModuleDownloads extends Controller {
                 'category_id'       => $category_info['category_id'],
                 'cat_name'          => $category_info['name'],
                 'cat_description'   => strip_tags(html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8')),
-                'cat_files'         => $downloads[$category_info['category_id']],
+                'cat_files'         => (!empty($downloads[$category_info['category_id']])) ? $downloads[$category_info['category_id']] : array(),
             );
         }
 
