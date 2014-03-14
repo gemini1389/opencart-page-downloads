@@ -37,7 +37,12 @@ class ControllerDownloadsDownloadsitems extends Controller {
 			$downloadsitem_id = $this->request->get['downloadsitem_id'];
             $downloadsitem_old_file = $this->model_downloads_downloadsitems->getDownloadsitemsFile($downloadsitem_id);
 			$this->model_downloads_downloadsitems->editDownloadsitem($downloadsitem_id, $this->request->post);
-            $this->deleteDownloadsitemsFile($downloadsitem_old_file);
+
+            if (file_exists(DIR_DOWNLOAD . $downloadsitem_old_file)) {
+                if (md5_file(DIR_DOWNLOAD . $downloadsitem_old_file) != md5_file(DIR_DOWNLOAD . $this->request->post['filename'])) {
+                    $this->deleteDownloadsitemsFile($downloadsitem_old_file);
+                }
+            }
 
 			$this->session->data['success'] = $this->language->get('text_update_success');
 			if($this->request->post['act_mode']) {
